@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="Insertform" type="com.myapp.struts.Insertform"/>
+        <form-bean name="Logoutbean" type="com.myapp.struts.Logoutbean"/>
+        <form-bean name="BuyForm" type="com.myapp.struts.BuyForm"/>
+        <form-bean name="LoginActionForm" type="com.myapp.struts.LoginActionForm"/>
+        <form-bean name="searchform" type="com.myapp.struts.searchform"/>
+        <form-bean name="deleteform" type="com.myapp.struts.deleteform"/>
+        <form-bean name="updateform" type="com.myapp.struts.updateform"/>
+        <form-bean name="registerform" type="com.myapp.struts.registerform"/>
+       
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+       
+        <action input="/register.jsp" name="registerform" path="/nikit4" scope="session" type="com.myapp.struts.registeraction">
+            <forward name="OK" path="mh"/>
+        </action>
+        <action input="/delete.jsp" name="deleteform" path="/nikit6" scope="session" type="com.myapp.struts.deleteaction">
+        <forward name="OK" path="up"/>
+        </action>
+        <action input="/update.jsp" name="updateform" path="/nikit11" scope="session" type="com.myapp.struts.updateaction">
+        <forward name="OK" path="up"/>
+        </action>
+        <action input="/search.jsp" name="searchform" path="/sa" scope="session" type="com.myapp.struts.searchaction">
+
+            <forward name="ok" path="mob"/>
+            <forward name="ap" path="app1"/>
+            <forward name="sam" path="app2"/>
+             <forward name="mic" path="app3"/>
+            <forward name="nk" path="app4"/>
+             <forward name="apl" path="app5"/>
+<forward name="ap2" path="app6"/>
+            </action>
+<action input="/login.jsp" name="LoginActionForm" path="/nikit3" scope="session" type="com.myapp.struts.LoginAction">
+<forward name="adminpage" path="up"/>
+<forward name="userpage" path="userlp"/>
+<forward name="ilogin" path="inlogin"/>
+
+</action>
+        <action input="/buy.jsp" name="BuyForm" path="/nikit5" scope="session" type="com.myapp.struts.BuyAction">
+
+            <forward name="atc" path="atc"/>
+            </action>
+        <action input="/userlayout.jsp" name="Logoutbean" path="/logout" scope="session" type="com.myapp.struts.LogoutAction">
+<forward name="logout" path="ul"/>
+</action>
+        <action input="/insert.jsp" name="Insertform" path="/nikit9" scope="session" type="com.myapp.struts.Insertaction">
+<forward name="OK" path="up"/>
+        </action>
+       
+        <action path="/wow" forward="buy"/>
+ <action path="/bil" forward="bill1"/>
+  <action path="/bil1" forward="bill2"/>
+   <action path="/bil2" forward="bill3"/>
+
+   <action path="/bil4" forward="bill4"/>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        <action path="/myhome" forward="mh"/>
+        <action path="/login1" forward="l1"/>
+        <action path="/register1" forward="r1"/>
+        <action path="/aboutus" forward="as"/>
+        <action path="/contactus" forward="cs"/>
+         <action path="/showlist" forward="sh"/>
+        <action path="/updateprice" forward="up"/>
+        <action path="/deletemobile" forward="del"/>
+        <action path="/insertmobile" forward="ins"/>
+
+        </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

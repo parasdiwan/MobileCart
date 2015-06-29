@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+    
+    <definition name="mh" path="/layout.jsp">
+        <put name="header"  value="header.jsp" />
+        <put name="image"   value="image.jsp" />
+        <put name="body" value="body.jsp" />
+        <put name="footer" value="footer.jsp" />
+        
+    </definition>
+    <definition name="aa" path="/layout.jsp">
+        <put name="header"  value="header.jsp" />
+        <put name="image"   value="image.jsp" />
+        <put name="body" value="login.jsp" />
+        <put name="footer" value="footer.jsp" />
+        </definition>
+   
+    <definition name="l1" extends="mh">
+        <put name="body"  value="login.jsp"/>
+        </definition>
+
+<definition name="ul" extends="mh">
+        <put name="body"  value="login.jsp"/>
+        </definition>
+
+<definition name="r1" extends="mh">
+        <put name="body"  value="/register.jsp" />
+        </definition>
+        <definition name="login" extends="mh">
+        <put name="body"  value="/register.jsp" />
+        </definition>
+<definition name="as" extends="mh">
+        <put name="body"  value="aboutus.jsp" />
+        </definition>
+        <definition name="cs" extends="mh">
+        <put name="body"  value="contact.jsp" />
+        </definition>
+        <definition name="inlogin" extends="mh">
+        <put name="body"  value="invalidlogin.jsp" />
+        </definition>
+
+<definition name="up" path="/admin layout.jsp">
+    <put name="body1"  value="update.jsp" />
+ </definition>
+
+<definition name="del" extends="up">
+        <put name="body1"  value="delete.jsp"/>
+        </definition>
+<definition name="ins" extends="up">
+        <put name="body1"  value="insert.jsp"/>
+        </definition>
+        <definition name="sh" extends="up">
+        <put name="body1"  value="table.jsp"/>
+        </definition>
+<definition name="userlp" path="/userlayout.jsp">
+    <put name="search"  value="search.jsp" />
+    <put name="figcap3"  value="figcap.jsp" />
+    </definition>
+<definition name="mob" extends="userlp">
+        <put name="figcap3"  value="figcap2.jsp"/>
+        </definition>
+<definition name="app1" extends="userlp">
+        <put name="figcap3"  value="sony.jsp"/>
+        </definition>
+<definition name="app2" extends="userlp">
+        <put name="figcap3"  value="samsung.jsp"/>
+        </definition>
+<definition name="app3" extends="userlp">
+        <put name="figcap3"  value="micromax.jsp"/>
+        </definition>
+<definition name="app4" extends="userlp">
+        <put name="figcap3"  value="nokia.jsp"/>
+        </definition>
+<definition name="app5" extends="userlp">
+        <put name="figcap3"  value="apple.jsp"/>
+        </definition>
+        <definition name="app6" extends="userlp">
+        <put name="figcap3"  value="figcap.jsp"/>
+        </definition>
+<definition name="buy" extends="userlp">
+        <put name="figcap3"  value="buy.jsp"/>
+        </definition>
+<definition name="atc" extends="userlp">
+        <put name="figcap3"  value="figcap.jsp"/>
+        </definition>
+<definition name="bill1" extends="userlp">
+        <put name="figcap3"  value="bill2.jsp"/>
+        </definition>
+        <definition name="bill2" extends="userlp">
+        <put name="figcap3"  value="bill1.jsp"/>
+        </definition>
+        <definition name="bill3" extends="userlp">
+        <put name="figcap3"  value="figcap.jsp"/>
+        </definition>
+        <definition name="bill4" extends="userlp">
+        <put name="figcap3"  value="bill3.jsp"/>
+        </definition>
+<!-- sample tiles definitions
+    <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
+        <putList name="list" >
+            <add value=".menu.links" />
+            <add value=".menu.taglib.references" />
+            <add value=".menu.printer.friendly" />
+            <add value=".menu.old.documents" />
+      </putList>
+    </definition>
+
+    <definition name="aPage" extends=".mainLayout">
+        <put name="title"  value="Another Title" />
+        <put name="body"   value=".aPage.body" />
+    </definition>
+
+    end samples -->
+
+    <definition name="${YOUR_DEFINITION_HERE}">
+    </definition>
+
+</tiles-definitions>
